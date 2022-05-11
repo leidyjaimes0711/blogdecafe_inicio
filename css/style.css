@@ -5,6 +5,7 @@
     --cafe: #784D3C;
     --blanco: #ffffff; 
     --negro: #000000;
+    --gris:#e0c2c2;
 
 
 }
@@ -26,7 +27,6 @@ body{
     line-height: 2;
 }
 
-
 /*GLOBALES*/
 
 .contenedor {
@@ -46,6 +46,7 @@ p{
 }
 h1, h2, h3, h4{
     font-family: var(--fuenteTitulos);
+    line-height: 1.2;
 }
 
 h1{
@@ -63,12 +64,18 @@ h4{
     font-size: 2.8rem;
 }
 
-img{
+img {
     max-width: 100%;
 }
+span{
+    font-weight: 400;
+}
 
-/*UTILIDADES*/
+/*________________________________________UTILIDADES________________________________*/
 
+.bold{
+    font-weight: 400;
+}
 .no-margin {
     margin: 0;
 }
@@ -81,16 +88,28 @@ img{
     text-align: center;
 }
 
-/*HEADER*/
+.bold{
+  font-weight: 900;
+}
 
-.header {
-    background-image: url(../blogdecafe_inicio/img/banner.webp);
+/*________________________________________HEADER________________________________*/
+
+.header{
     height: 600px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: var(--blanco);
 }
+
+.webp .header{
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header{
+    background-image: url(../img/banner.jpg);
+}
+
 
 .header_texto{
     color: var(--blanco);
@@ -99,9 +118,7 @@ img{
 }
 
 /*contenedor del header*/
-.contenedor1{
 
-}
 
 .bar{
     display: flex;
@@ -134,62 +151,59 @@ img{
     text-align: center;
     font-size: 1.8rem;
     gap: 2rem;
-    
-   
 }
 
 .navegacion_enlace{
    display: block;
    color: var(--blanco);
-    
 }
 
 
-/*FOOTER*/
+/*________________________________________FOOTER________________________________*/
 
-.contenedor2{
-}
 .footer__texto{
     color: var(--blanco);
     text-align: center;
     margin-top: 5rem;
 }
+
 .footer{
     background-color: #000000;
 }
 
 
-
-/*CONTENIDO*/
+/*________________________________________INDEX________________________________*/
 
 .contenedorContenido{
-
     display: grid;
-    grid-template-columns: 65% 35%;
-    grid-template-rows: 15% repeat(28%);
+    grid-template-columns: 70% 30%;
+    column-gap: 0px;
+   
+}
+
+
+/*---------Entradas en general-------*/
+.contenedor_entradas{
+    grid-column: 1;
     gap: 1rem;
-    margin-left: 4rem;
+    margin-left: 14rem;
     margin-right: 4rem;
     align-items: center;
 }
 
 
-
 .entrada{
     grid-column: 1;
     display: grid;
-    grid-template-rows: 60% 15% 25%;
-
+    grid-template-rows: 3;
+    margin-bottom: 40px;
 }
-
 
 .imagen_parrafo{
  grid-row: 1;
+ align-self: center;
  width:100%;
  height: 100%;
- 
-
-
 }
 
 .titulo_entrada{
@@ -197,48 +211,224 @@ img{
     text-align: left;
     margin-top: 0;
     margin-bottom: 0;
-   
-   
-   
-   }
-   
-   
+}
+     
 .parrafo{
     grid-row: 3;
-    row-gap: 0;
+    grid-template-rows: repeat(3, 1fr);
     text-align: justify;
     margin-top: 0;
-    margin-bottom: 0;
-   
-   }
-   
-/*..........................................*/
-.entrada1{ /* solo entrada 1*/
+ }
 
-    grid-template-rows: 25% 25% 25% 25%;
-    
+.linea{
+    border: 3px;
+    border-bottom-style:solid;
+    border-bottom-color: rgb(221, 221, 221);
+   /*OJO con las margenes*/
+}
+
+.no_linea{
+  border: none;
+
+}
+.boton_entrada
+{ 
+    display: block;
+    font-family: var(--fuenteTitulos);
+    color: var(--blanco);
+    background-color:var(--cafe);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+
+}
+
+.boton_entrada:hover
+{
+   background-color: #BAA378;
+  
+}
+
+/*------Entrada 1-----------*/
+
+.entrada1{ 
+    grid-row:1;
+    grid-template-rows: repeat (4, 1fr);
+    gap: 0;
+    margin-bottom: 40px;
 }
 
 .titulo1_entrada{
     grid-row: 1;
     text-align: left;
-    margin-top: 0;
-    margin-bottom: 0;
-   
-   
+    margin: 40px;
 }
 
 .imagen_parrafo1{ /* solo parrafo 1*/
  grid-row: 2;
  width:100%;
  height: 100%;
- margin-bottom: 0;
- 
+}
 
-
-
+.boton_entrada1{
+    grid-column: 1;
+    grid-row: 4;
+    margin-bottom: 10px;
+    
 }
 
 
 
 
+/*_______barra derecha con cursos___________*/
+
+.barra_cursos{
+    margin: 50px;
+    margin-left: 0%;
+}
+
+.boton_cursos{
+    display: block;
+    font-family: var(--fuenteTitulos);
+    color: var(--blanco);
+    background-color:var(--cafe);
+    text-align: center;
+    padding: 1rem 1rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    
+}
+
+
+.boton_cursos:hover{
+    background-color: #BAA378;
+    
+}
+
+
+
+/*------------Curso 2---------*/
+
+
+
+
+.boton_curso2{
+
+    width: 100%;
+    height: 100px;
+    background-color: var(--cafe);
+    color: var(--blanco);
+    font-family: var(--fuenteTitulos);
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.margin{
+    border: 3px;
+    border-bottom-style:solid;
+    border-bottom-color: rgb(221, 221, 221);
+}
+
+.interlineado{
+    line-height: 1.5;
+}
+
+
+
+/*_____________________________________NOSOTROS_____________________________________*/
+.contenedor_nosotros{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 2rem;
+    margin: 50px;
+}
+
+
+
+/*__________________________________________________CURSOS____________________________*/ 
+
+
+
+.contenedor_cursos{
+
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.entry{
+    display: grid;
+    grid-template-columns:  30% 70%;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 2px solid var(--gris);
+
+}
+.no-border-bottom{
+    border-bottom: none;
+}
+img{
+    max-width: 100%;
+}
+
+
+/*_______________________________________CONTACTO______________________________________*/ 
+
+.contenedor_contacto{
+    margin: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+.contenedor_form{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.imagen{
+    background-image: url(../img/contacto.jpg);
+    height: 30rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+   
+}
+
+.campo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.campo_label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo_field{
+    flex: 1;
+    border: 1px solid gray;
+}
+
+.campo_field_textarea{
+    height:20rem;
+}
+
+textarea{
+    overflow: auto;
+}
